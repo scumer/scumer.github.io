@@ -4,70 +4,70 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://scumer.com/</loc>
-<lastmod>2016-08-01T10:43:41-00:00</lastmod>
+<loc>http://localhost:8000/</loc>
+<lastmod>2016-08-01T10:50:26-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/archives.html</loc>
-<lastmod>2016-08-01T10:43:41-00:00</lastmod>
+<loc>http://localhost:8000/archives.html</loc>
+<lastmod>2016-08-01T10:50:26-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/tags.html</loc>
-<lastmod>2016-08-01T10:43:41-00:00</lastmod>
+<loc>http://localhost:8000/tags.html</loc>
+<lastmod>2016-08-01T10:50:26-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/categories.html</loc>
-<lastmod>2016-08-01T10:43:41-00:00</lastmod>
+<loc>http://localhost:8000/categories.html</loc>
+<lastmod>2016-08-01T10:50:26-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/about</loc>
-<lastmod>2016-08-01T10:43:41-00:00</lastmod>
+<loc>http://localhost:8000/about</loc>
+<lastmod>2016-08-01T10:50:26-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/python-gdcm-scu</loc>
+<loc>http://localhost:8000/python-gdcm-scu</loc>
 <lastmod>2016-07-31T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/category/python.html</loc>
+<loc>http://localhost:8000/category/python.html</loc>
 <lastmod>2016-07-31T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/tag/python.html</loc>
+<loc>http://localhost:8000/tag/python.html</loc>
 <lastmod>2016-07-31T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/tag/gdcm.html</loc>
+<loc>http://localhost:8000/tag/gdcm.html</loc>
 <lastmod>2016-07-31T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://scumer.com/author/scumer.html</loc>
+<loc>http://localhost:8000/author/scumer.html</loc>
 <lastmod>2016-07-31T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
