@@ -12,23 +12,23 @@
 
 <meta name="keywords" content="python, gdcm, Python, " />
 
-<meta property="og:title" content="Python GDCM SCU "/>
-<meta property="og:url" content="/python-gdcm-scu.html" />
-<meta property="og:description" content="program dicom scu with python gdcm" />
+<meta property="og:title" content="Python GDCM SCU  - [dicom scu] "/>
+<meta property="og:url" content="http://localhost:8000/python-gdcm-scu" />
+<meta property="og:description" content="program dicom scu with python gdcm" />
 <meta property="og:site_name" content="SCUMER" />
 <meta property="og:article:author" content="scumer" />
 <meta property="og:article:published_time" content="2016-07-31T00:00:00+08:00" />
-<meta name="twitter:title" content="Python GDCM SCU ">
-<meta name="twitter:description" content="program dicom scu with python gdcm">
+<meta name="twitter:title" content="Python GDCM SCU  - [dicom scu] ">
+<meta name="twitter:description" content="program dicom scu with python gdcm">
 
-        <title>Python GDCM SCU  · SCUMER
+        <title>Python GDCM SCU  - [dicom scu]  · SCUMER
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+<link rel="stylesheet" href="http://localhost:8000/theme/webassets-external/a88dd639dddcc85f1f297f24eb8d681a_pygments.css">
+<link rel="stylesheet" href="http://localhost:8000/theme/webassets-external/7b3ea82f9d7a680ff9d10a70aef6d90b_tipuesearch.css">
+<link rel="stylesheet" href="http://localhost:8000/theme/webassets-external/1928e7a6ce6831524672bff2164d6cfa_elegant.css">
+<link rel="stylesheet" href="http://localhost:8000/theme/webassets-external/ff1b4b7b8737f4ceb34388125aa3c4d5_custom.css">
     </head>
     <body>
         <div id="content-sans-footer">
@@ -40,15 +40,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="/"><span class=site-name>SCUMER</span></a>
+                    <a class="brand" href="http://localhost:8000/"><span class=site-name>SCUMER</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
-                            <li ><a href="">Home</a></li>
-                            <li ><a href="/pages/about.html">About</a></li>
-                            <li ><a href="/categories.html">Categories</a></li>
-                            <li ><a href="/tags.html">Tags</a></li>
-                            <li ><a href="/archives.html">Archives</a></li>
-                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            <li ><a href="http://localhost:8000">Home</a></li>
+                            <li ><a href="http://localhost:8000/about">About</a></li>
+                            <li ><a href="http://localhost:8000/categories.html">Categories</a></li>
+                            <li ><a href="http://localhost:8000/tags.html">Tags</a></li>
+                            <li ><a href="http://localhost:8000/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="http://localhost:8000/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="/python-gdcm-scu.html"> Python GDCM SCU  </a></h1>
+    <h1><a href="http://localhost:8000/python-gdcm-scu"> Python <span class="caps">GDCM</span> <span class="caps">SCU</span>  <small> [dicom scu] </small>  </a></h1>
     </header>
 </div>
 
@@ -69,55 +69,113 @@
         <div class="span8 offset2 article-content">
 
             
-            <p>使用python gdcm编写dicom scu,c-find/c-move/c-store</p>
-<div class="highlight"><pre><span></span>def _getQuery(kwargs):
-    queryKeys = gdcm.DataSet()
-    for key in kwargs:
-        if key != studyUIDTag:
-            continue
-        de = gdcm.DataElement()
-        de.SetTag(key)
-        de.SetByteValue(kwargs[key],gdcm.VL(len(kwargs[key])))
-        queryKeys.Insert(de)
+            <p>使用python gdcm编写dicom&nbsp;scu,c-find/c-move/c-store</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_getQuery</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">queryKeys</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">DataSet</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="n">studyUIDTag</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">de</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">DataElement</span><span class="p">()</span>
+        <span class="n">de</span><span class="o">.</span><span class="n">SetTag</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">de</span><span class="o">.</span><span class="n">SetByteValue</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">],</span><span class="n">gdcm</span><span class="o">.</span><span class="n">VL</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])))</span>
+        <span class="n">queryKeys</span><span class="o">.</span><span class="n">Insert</span><span class="p">(</span><span class="n">de</span><span class="p">)</span>
 
-    #ePatientRootType,eStudyRootType   # ePatient,eStudy,eSeries,eImage 
-    query = gdcm.CompositeNetworkFunctions_ConstructQuery(gdcm.eStudyRootType,gdcm.eStudy,queryKeys,True) 
-    return query
+    <span class="c1">#ePatientRootType,eStudyRootType   # ePatient,eStudy,eSeries,eImage </span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">CompositeNetworkFunctions_ConstructQuery</span><span class="p">(</span><span class="n">gdcm</span><span class="o">.</span><span class="n">eStudyRootType</span><span class="p">,</span><span class="n">gdcm</span><span class="o">.</span><span class="n">eStudy</span><span class="p">,</span><span class="n">queryKeys</span><span class="p">,</span><span class="bp">True</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">query</span>
 
-scu = gdcm.ServiceClassUser()
-scu.SetHostname(MOVE_CONFIG[&#39;host&#39;])
-scu.SetPort(MOVE_CONFIG[&#39;port&#39;])
-scu.SetTimeout(100)
-scu.SetCalledAETitle(MOVE_CONFIG[&#39;callAE&#39;])
-scu.SetAETitle(MOVE_CONFIG[&#39;callingAE&#39;])
-scu.SetPortSCP(MOVE_CONFIG[&#39;retrievePort&#39;])
+<span class="n">scu</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">ServiceClassUser</span><span class="p">()</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetHostname</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetPort</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetTimeout</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetCalledAETitle</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;callAE&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetAETitle</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;callingAE&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetPortSCP</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;retrievePort&#39;</span><span class="p">])</span>
 
-query = _getQuery(
-    {
-        studyUIDTag:studyUID,
-        seriesUIDTag:seriesUID,
-        sopUIDTag:sopUID
-    })
-print &#39;query:&#39;, query.ValidateQuery()
+<span class="n">query</span> <span class="o">=</span> <span class="n">_getQuery</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="n">studyUIDTag</span><span class="p">:</span><span class="n">studyUID</span><span class="p">,</span>
+        <span class="n">seriesUIDTag</span><span class="p">:</span><span class="n">seriesUID</span><span class="p">,</span>
+        <span class="n">sopUIDTag</span><span class="p">:</span><span class="n">sopUID</span>
+    <span class="p">})</span>
+<span class="k">print</span> <span class="s1">&#39;query:&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">ValidateQuery</span><span class="p">()</span>
 
-print &#39;InitializeConnection:&#39;, scu.InitializeConnection()
-generator = gdcm.PresentationContextGenerator()
-generator.GenerateFromUID(query.GetAbstractSyntaxUID())  # !!!
-scu.SetPresentationContexts(generator.GetPresentationContexts())
+<span class="k">print</span> <span class="s1">&#39;InitializeConnection:&#39;</span><span class="p">,</span> <span class="n">scu</span><span class="o">.</span><span class="n">InitializeConnection</span><span class="p">()</span>
+<span class="n">generator</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">PresentationContextGenerator</span><span class="p">()</span>
+<span class="n">generator</span><span class="o">.</span><span class="n">GenerateFromUID</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">GetAbstractSyntaxUID</span><span class="p">())</span>  <span class="c1"># !!!</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetPresentationContexts</span><span class="p">(</span><span class="n">generator</span><span class="o">.</span><span class="n">GetPresentationContexts</span><span class="p">())</span>
 
-if scu.StartAssociation():
-    # print &#39;Echo:&#39;,scu.SendEcho()
-    res = gdcm.DataSetArrayType()
-    # if scu.SendFind(query, res):
-    if scu.SendMove(query, MOVE_CONFIG[&#39;path&#39;]):
-        pass
-        # for dataset in res:
-        #     print dataset.GetDataElement(studyUIDTag)
-        #     print dataset.GetDataElement(seriesUIDTag)
-        #     print dataset.GetDataElement(sopUIDTag)
-    scu.StopAssociation()
+<span class="k">if</span> <span class="n">scu</span><span class="o">.</span><span class="n">StartAssociation</span><span class="p">():</span>
+    <span class="c1"># print &#39;Echo:&#39;,scu.SendEcho()</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">DataSetArrayType</span><span class="p">()</span>
+    <span class="c1"># if scu.SendFind(query, res):</span>
+    <span class="k">if</span> <span class="n">scu</span><span class="o">.</span><span class="n">SendMove</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]):</span>
+        <span class="k">pass</span>
+        <span class="c1"># for dataset in res:</span>
+        <span class="c1">#     print dataset.GetDataElement(studyUIDTag)</span>
+        <span class="c1">#     print dataset.GetDataElement(seriesUIDTag)</span>
+        <span class="c1">#     print dataset.GetDataElement(sopUIDTag)</span>
+    <span class="n">scu</span><span class="o">.</span><span class="n">StopAssociation</span><span class="p">()</span>
 </pre></div>
-            
+</td></tr></table>
+            <section>
+    <p id="post-share-links">
+    Share on:
+    <a href="http://twitter.com/home?status=Python%20GDCM%20SCU%20%5Bdicom%20scu%5D%20http%3A//localhost%3A8000/python-gdcm-scu" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/python-gdcm-scu" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=http%3A//localhost%3A8000/python-gdcm-scu" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=Python%20GDCM%20SCU%20%5Bdicom%20scu%5D&amp;body=http%3A//localhost%3A8000/python-gdcm-scu" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
             
             <hr/>
         </div>
@@ -126,21 +184,19 @@ if scu.StartAssociation():
             <h4>Published</h4>
             <time pubdate="pubdate" datetime="2016-07-31T00:00:00+08:00">7月 31, 2016</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#python-ref">Python</a>
+            <a class="category-link" href="http://localhost:8000/categories.html#python-ref">Python</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags.html#gdcm-ref">gdcm
+                <li><a href="http://localhost:8000/tags.html#gdcm-ref">gdcm
                     <span>1</span>
 </a></li>
-                <li><a href="/tags.html#python-ref">python
+                <li><a href="http://localhost:8000/tags.html#python-ref">python
                     <span>1</span>
 </a></li>
             </ul>
 <h4>Contact</h4>
-    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
-    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-another social link sidebar-social-links"></i></a>
+    <a href="mailto:scumer@126.com" title="My Email Address" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-envelope sidebar-social-links"></i></a>
         </div>
         </section>
 </div>
