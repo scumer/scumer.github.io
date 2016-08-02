@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://scumer.com/</loc>
-<lastmod>2016-08-02T18:56:31-00:00</lastmod>
+<lastmod>2016-08-02T19:04:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://scumer.com/archives.html</loc>
-<lastmod>2016-08-02T18:56:31-00:00</lastmod>
+<lastmod>2016-08-02T19:04:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://scumer.com/tags.html</loc>
-<lastmod>2016-08-02T18:56:31-00:00</lastmod>
+<lastmod>2016-08-02T19:04:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://scumer.com/categories.html</loc>
-<lastmod>2016-08-02T18:56:31-00:00</lastmod>
+<lastmod>2016-08-02T19:04:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://scumer.com/photo</loc>
-<lastmod>2016-08-02T18:56:31-00:00</lastmod>
+<lastmod>2016-08-02T19:04:49-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://scumer.com/about</loc>
-<lastmod>2016-08-02T18:56:31-00:00</lastmod>
+<lastmod>2016-08-02T19:04:49-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
