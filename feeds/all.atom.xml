@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SCUMER</title><link href="http://scumer.com/" rel="alternate"></link><link href="http://scumer.com/feeds/all.atom.xml" rel="self"></link><id>http://scumer.com/</id><updated>2016-07-31T00:00:00+08:00</updated><entry><title>Python any all函数用法</title><link href="http://scumer.com/python-any-all" rel="alternate"></link><published>2016-07-31T00:00:00+08:00</published><author><name>scumer</name></author><id>tag:scumer.com,2016-07-31:python-any-all</id><summary type="html">&lt;p&gt;python &lt;code&gt;any&lt;/code&gt; &lt;code&gt;all&lt;/code&gt; 函数用法&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SCUMER</title><link href="http://scumer.com/" rel="alternate"></link><link href="http://scumer.com/feeds/all.atom.xml" rel="self"></link><id>http://scumer.com/</id><updated>2016-08-05T00:00:00+08:00</updated><entry><title>隐藏标准输出、错误</title><link href="http://scumer.com/python-hide-stdout" rel="alternate"></link><published>2016-08-05T00:00:00+08:00</published><author><name>scumer</name></author><id>tag:scumer.com,2016-08-05:python-hide-stdout</id><summary type="html">&lt;p&gt;python隐藏标准输入输出的方法(使用&lt;code&gt;subprocess&lt;/code&gt;时遇到的输出问题，不想让程序输出乱七八糟的信息)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DEVNULL = open(os.devnull, &amp;#39;wb&amp;#39;)
+subprocess.Popen([exename, args], stdout=DEVNULL, stderr=subprocess.STDOUT)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;用完这种方式，感觉有点太狠了，把所有的输出信息全隐藏了，如果调用出错，也很难知道出错原因。&lt;br /&gt;
+所以想能不能有方法将输出重定向到&lt;code&gt;logging&lt;/code&gt;?&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>any all函数用法</title><link href="http://scumer.com/python-any-all" rel="alternate"></link><published>2016-07-31T00:00:00+08:00</published><author><name>scumer</name></author><id>tag:scumer.com,2016-07-31:python-any-all</id><summary type="html">&lt;p&gt;python &lt;code&gt;any&lt;/code&gt; &lt;code&gt;all&lt;/code&gt; 函数用法&lt;/p&gt;
 &lt;p&gt;any()&lt;br /&gt;
 Return True if bool(x) is True for any x in the iterable.
 If the iterable is empty, return False.&lt;br /&gt;&amp;nbsp;当传入空可迭代对象时返回False，当可迭代对象中有任意一个不为False，则返回True&lt;/p&gt;
@@ -22,7 +29,7 @@ all&lt;span class="o"&gt;([&lt;/span&gt;1,2&lt;span class="o"&gt;])&lt;/span&gt;
 
 &lt;p&gt;list all in sepcified&amp;nbsp;string&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;all&lt;span class="o"&gt;(&lt;/span&gt;x in &lt;span class="s1"&gt;&amp;#39;ipadabciphone&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; x in &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iphone&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;ipad&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt;&amp;gt; True
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category></entry><entry><title>Python GDCM SCU</title><link href="http://scumer.com/python-gdcm-scu" rel="alternate"></link><published>2016-07-31T00:00:00+08:00</published><author><name>scumer</name></author><id>tag:scumer.com,2016-07-31:python-gdcm-scu</id><summary type="html">&lt;p&gt;使用python gdcm编写dicom&amp;nbsp;scu,c-find/c-move/c-store&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category></entry><entry><title>GDCM SCU</title><link href="http://scumer.com/python-gdcm-scu" rel="alternate"></link><published>2016-07-31T00:00:00+08:00</published><author><name>scumer</name></author><id>tag:scumer.com,2016-07-31:python-gdcm-scu</id><summary type="html">&lt;p&gt;使用python gdcm编写dicom&amp;nbsp;scu,c-find/c-move/c-store&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
  2
  3
