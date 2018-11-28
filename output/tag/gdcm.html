@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>A Pelican Blog - gdcm</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/photo.html">相册</a></li>
+                    <li><a href="/pages/about.html">关于</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/python-gdcm-scu.html">GDCM SCU</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-07-31T00:00:00+00:00">
+                Published: 周日 31 七月 2016
+        </abbr>
+
+<p>In <a href="/category/python.html">Python</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/gdcm.html">gdcm</a> </p>
+</footer><!-- /.post-info --><p>使用python gdcm编写dicom scu,c-find/c-move/c-store</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_getQuery</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">queryKeys</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">DataSet</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="n">studyUIDTag</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">de</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">DataElement</span><span class="p">()</span>
+        <span class="n">de</span><span class="o">.</span><span class="n">SetTag</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">de</span><span class="o">.</span><span class="n">SetByteValue</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">],</span><span class="n">gdcm</span><span class="o">.</span><span class="n">VL</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])))</span>
+        <span class="n">queryKeys</span><span class="o">.</span><span class="n">Insert</span><span class="p">(</span><span class="n">de</span><span class="p">)</span>
+
+    <span class="c1">#ePatientRootType,eStudyRootType   # ePatient,eStudy,eSeries,eImage </span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">CompositeNetworkFunctions_ConstructQuery</span><span class="p">(</span><span class="n">gdcm</span><span class="o">.</span><span class="n">eStudyRootType</span><span class="p">,</span><span class="n">gdcm</span><span class="o">.</span><span class="n">eStudy</span><span class="p">,</span><span class="n">queryKeys</span><span class="p">,</span><span class="bp">True</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">query</span>
+
+<span class="n">scu</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">ServiceClassUser</span><span class="p">()</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetHostname</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetPort</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetTimeout</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetCalledAETitle</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;callAE&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetAETitle</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;callingAE&#39;</span><span class="p">])</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetPortSCP</span><span class="p">(</span><span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;retrievePort&#39;</span><span class="p">])</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">_getQuery</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="n">studyUIDTag</span><span class="p">:</span><span class="n">studyUID</span><span class="p">,</span>
+        <span class="n">seriesUIDTag</span><span class="p">:</span><span class="n">seriesUID</span><span class="p">,</span>
+        <span class="n">sopUIDTag</span><span class="p">:</span><span class="n">sopUID</span>
+    <span class="p">})</span>
+<span class="k">print</span> <span class="s1">&#39;query:&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">ValidateQuery</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s1">&#39;InitializeConnection:&#39;</span><span class="p">,</span> <span class="n">scu</span><span class="o">.</span><span class="n">InitializeConnection</span><span class="p">()</span>
+<span class="n">generator</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">PresentationContextGenerator</span><span class="p">()</span>
+<span class="n">generator</span><span class="o">.</span><span class="n">GenerateFromUID</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">GetAbstractSyntaxUID</span><span class="p">())</span>  <span class="c1"># !!!</span>
+<span class="n">scu</span><span class="o">.</span><span class="n">SetPresentationContexts</span><span class="p">(</span><span class="n">generator</span><span class="o">.</span><span class="n">GetPresentationContexts</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="n">scu</span><span class="o">.</span><span class="n">StartAssociation</span><span class="p">():</span>
+    <span class="c1"># print &#39;Echo:&#39;,scu.SendEcho()</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">gdcm</span><span class="o">.</span><span class="n">DataSetArrayType</span><span class="p">()</span>
+    <span class="c1"># if scu.SendFind(query, res):</span>
+    <span class="k">if</span> <span class="n">scu</span><span class="o">.</span><span class="n">SendMove</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">MOVE_CONFIG</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]):</span>
+        <span class="k">pass</span>
+        <span class="c1"># for dataset in res:</span>
+        <span class="c1">#     print dataset.GetDataElement(studyUIDTag)</span>
+        <span class="c1">#     print dataset.GetDataElement(seriesUIDTag)</span>
+        <span class="c1">#     print dataset.GetDataElement(sopUIDTag)</span>
+    <span class="n">scu</span><span class="o">.</span><span class="n">StopAssociation</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

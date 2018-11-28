@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>A Pelican Blog - Tags</title>
+        <title>隐藏标准输出、错误</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -13,18 +13,38 @@
                 <nav><ul>
                     <li><a href="/pages/photo.html">相册</a></li>
                     <li><a href="/pages/about.html">关于</a></li>
-                    <li><a href="/category/python.html">Python</a></li>
+                    <li class="active"><a href="/category/python.html">Python</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-
 <section id="content" class="body">
-    <h1>Tags for A Pelican Blog</h1>
-    <ul>
-        <li><a href="/tag/gdcm.html">gdcm</a> (1)</li>
-        <li><a href="/tag/python.html">python</a> (3)</li>
-    </ul>
-</section>
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/python-hide-stdout.html" rel="bookmark"
+           title="Permalink to 隐藏标准输出、错误">隐藏标准输出、错误</a></h1>
+    </header>
 
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-08-05T00:00:00+00:00">
+                Published: 周五 05 八月 2016
+        </abbr>
+
+<p>In <a href="/category/python.html">Python</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> </p>
+</footer><!-- /.post-info -->      <p>python隐藏标准输入输出的方法(使用<code>subprocess</code>时遇到的输出问题，不想让程序输出乱七八糟的信息)<br>
+使用<code>os.devnull</code></p>
+<div class="highlight"><pre><span></span>DEVNULL = open(os.devnull, &#39;wb&#39;)
+subprocess.Popen([exename, args], stdout=DEVNULL, stderr=subprocess.STDOUT)
+</pre></div>
+
+
+<p>用完这种方式，感觉有点太狠了，把所有的输出信息全隐藏了，如果调用出错，也很难知道出错原因。<br>
+所以想能不能有方法将输出重定向到<code>logging</code>?</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

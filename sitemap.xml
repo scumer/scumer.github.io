@@ -4,91 +4,91 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://localhost:8000/</loc>
-<lastmod>2018-11-28T16:40:22-00:00</lastmod>
+<loc>http://faigogo.com/</loc>
+<lastmod>2018-11-28T17:41:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/archives.html</loc>
-<lastmod>2018-11-28T16:40:22-00:00</lastmod>
+<loc>http://faigogo.com/archives.html</loc>
+<lastmod>2018-11-28T17:41:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tags.html</loc>
-<lastmod>2018-11-28T16:40:22-00:00</lastmod>
+<loc>http://faigogo.com/tags.html</loc>
+<lastmod>2018-11-28T17:41:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/categories.html</loc>
-<lastmod>2018-11-28T16:40:22-00:00</lastmod>
+<loc>http://faigogo.com/categories.html</loc>
+<lastmod>2018-11-28T17:41:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/photo</loc>
-<lastmod>2018-11-28T16:40:22-00:00</lastmod>
+<loc>http://faigogo.com/photo</loc>
+<lastmod>2018-11-28T17:41:40-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/about</loc>
-<lastmod>2018-11-28T16:40:22-00:00</lastmod>
+<loc>http://faigogo.com/about</loc>
+<lastmod>2018-11-28T17:41:40-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/python-hide-stdout</loc>
+<loc>http://faigogo.com/python-hide-stdout</loc>
 <lastmod>2016-08-05T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/python-any-all</loc>
+<loc>http://faigogo.com/python-any-all</loc>
 <lastmod>2016-07-31T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/python-gdcm-scu</loc>
+<loc>http://faigogo.com/python-gdcm-scu</loc>
 <lastmod>2016-07-31T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/category/python.html</loc>
+<loc>http://faigogo.com/category/python.html</loc>
 <lastmod>2016-08-05T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tag/python.html</loc>
+<loc>http://faigogo.com/tag/python.html</loc>
 <lastmod>2016-08-05T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tag/gdcm.html</loc>
+<loc>http://faigogo.com/tag/gdcm.html</loc>
 <lastmod>2016-07-31T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/author/faigo.html</loc>
+<loc>http://faigogo.com/author/faigo.html</loc>
 <lastmod>2016-08-05T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
