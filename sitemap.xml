@@ -5,42 +5,49 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://faigogo.com/</loc>
-<lastmod>2018-11-28T18:02:34-00:00</lastmod>
+<lastmod>2018-11-29T14:16:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://faigogo.com/archives.html</loc>
-<lastmod>2018-11-28T18:02:34-00:00</lastmod>
+<lastmod>2018-11-29T14:16:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://faigogo.com/tags.html</loc>
-<lastmod>2018-11-28T18:02:34-00:00</lastmod>
+<lastmod>2018-11-29T14:16:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://faigogo.com/categories.html</loc>
-<lastmod>2018-11-28T18:02:34-00:00</lastmod>
+<lastmod>2018-11-29T14:16:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://faigogo.com/photo</loc>
-<lastmod>2018-11-28T18:02:34-00:00</lastmod>
+<lastmod>2018-11-29T14:16:11-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://faigogo.com/about</loc>
-<lastmod>2018-11-28T18:02:34-00:00</lastmod>
+<lastmod>2018-11-29T14:16:11-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://faigogo.com/编码-编码</loc>
+<lastmod>2018-11-29T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -74,6 +81,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://faigogo.com/category/bian-ma.html</loc>
+<lastmod>2018-11-29T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://faigogo.com/category/python.html</loc>
 <lastmod>2016-08-05T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -83,6 +97,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://faigogo.com/category/regex.html</loc>
 <lastmod>2018-11-28T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://faigogo.com/tag/bian-ma.html</loc>
+<lastmod>2018-11-29T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -110,7 +131,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://faigogo.com/author/faigo.html</loc>
-<lastmod>2018-11-28T00:00:00+08:06</lastmod>
+<lastmod>2018-11-29T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
